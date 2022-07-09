@@ -28,7 +28,6 @@ option(BUILD_TESTS "Build test cases" OFF)
 option(BUILD_SDL_JSTEST "Build sdl-jstest" ON)
 option(BUILD_SDL2_JSTEST "Build sdl2-jstest" ON)
 
-include(GetProjectVersion)
 include(GNUInstallDirs)
 
 add_definitions(-DSDL_JSTEST_VERSION="${PROJECT_VERSION}")
@@ -105,7 +104,7 @@ if(BUILD_SDL2_JSTEST)
   file(COPY sdl2-jstest.1
     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-  file(COPY SDL_GameControllerDB/gamecontrollerdb.txt
+  file(COPY external/sdl_gamecontrollerdb/gamecontrollerdb.txt
     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/gamecontrollerdb.txt
